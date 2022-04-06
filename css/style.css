@@ -1,0 +1,179 @@
+body{
+    font-family:  'Lato', sans-serif;
+    background-color: gray;
+    margin: 0;
+
+}
+
+.tittle {
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.content-holder{
+    max-width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.content-holder{
+    color: rgb(49, 49, 49);
+}
+.content-holder .small-txt {
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.content-holder .big-txt {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.content-holder .big-txt #bold {
+    font-size: 30px;
+    color: black;
+}
+
+.bg-img{
+    height: 400px;
+    max-width: 100%;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.side-text{
+    background-color: #fff;
+    padding: 20px;
+}
+
+.side-text .scroll{
+    height: 150px;
+    width: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.side-text p {
+    font-size: 14px;
+}
+
+.scroll::-webkit-scrollbar{
+    width: 15px;
+    border-radius: 10px;
+    background: rgb(240, 236, 236);
+}
+
+.scroll::-webkit-scrollbar-track{
+    border-radius: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    box-shadow: inset 0 0 15px rgb(0, 0, 0.3);
+}
+
+/* formularz */
+
+.form {
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form {
+    max-width: 600px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 200px;
+    left: 450px;
+    position: absolute;
+    box-shadow: 0 0 15px 2px;
+}
+
+input{
+    margin-left: 40px;
+    padding: 10px;
+    padding-left: 25px;
+    border-radius: 20px;
+    width: 80%;  
+    text-transform: uppercase;
+    font-size: 12px;
+    border: none;
+}
+
+form p {
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+form input[type="text"] {
+    margin-top: 20px;
+}
+
+form input[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    border: none;
+    margin-left: 350px; 
+    margin-bottom: 50px;
+    cursor: pointer;
+    width: 30%;
+    align-items: flex-end;
+} 
+
+form input[type="submit"]:hover{
+    background-color:  #7f962f;
+    cursor: pointer;
+}
+
+/* tooltip */
+
+.tooltip-section {
+    color: #fff;
+    margin-bottom: 40px;
+    padding-right: 30px;
+}
+ul li .tooltip {
+    color: rgb(99, 134, 37);
+    cursor: pointer;
+}
+
+.first {
+    margin-bottom: 40px;
+} 
+
+
+.tooltip .tooltiptext{
+    color: #fff;
+    margin-right: 20px;
+    visibility: hidden;
+    position: absolute; 
+    z-index: 1;
+    
+    
+
+}
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+}
+
+.error{
+    font-size: 10px;
+    color: #e90027;
+    margin-left: 40px;
+}
+
+.red{
+    border-bottom: 1px solid #e90027;
+    background-color: #e90027;
+}
+
+

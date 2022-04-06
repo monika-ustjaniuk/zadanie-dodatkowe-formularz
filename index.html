@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz responsywny</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="content-holder">
+        <section class="tittle">
+            <p class="small-txt">zapisz się do naszego newsleretta</p>
+            <p class="big-txt">i odbierz<span id="bold"> 10% </span>rabatu na swoje zakupy!</p>
+        </section>
+
+        <section class="bg-img">
+            <img src="img/view-2.jpg" alt="view">
+        </section>
+
+        <section class="side-text">
+            <div class="scroll">
+                
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Cumque consequatur vitae quasi dignissimos vero sed atque 
+                    deserunt delectus optio eaque dolores dolorum accusantium 
+                    expedita laborum harum quas, quaerat error perferendis assumenda 
+                    unde nulla consequuntur ad quod commodi. Iure, suscipit explicabo?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Modi recusandae, officia minima consectetur provident culpa sint 
+                    perspiciatis praesentium consequuntur, dolor sapiente optio voluptatibus 
+                    asperiores reprehenderit. Quos veniam eius autem! Ea!Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Cumque consequatur vitae quasi dignissimos vero sed atque 
+                    deserunt delectus optio eaque dolores dolorum accusantium 
+                    expedita laborum harum quas, quaerat error perferendis assumenda 
+                    unde nulla consequuntur ad quod commodi. Iure, suscipit explicabo?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Modi recusandae, officia minima consectetur provident culpa sint 
+                    perspiciatis praesentium consequuntur, dolor sapiente optio voluptatibus 
+                    asperiores reprehenderit. Quos veniam eius autem! Ea!Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Cumque consequatur vitae quasi dignissimos vero sed atque 
+                    deserunt delectus optio eaque dolores dolorum accusantium 
+                    expedita laborum harum quas, quaerat error perferendis assumenda 
+                    unde nulla consequuntur ad quod commodi. Iure, suscipit explicabo?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Modi recusandae, officia minima consectetur provident culpa sint 
+                    perspiciatis praesentium consequuntur, dolor sapiente optio voluptatibus 
+                    asperiores reprehenderit. Quos veniam eius autem! Ea!Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Cumque consequatur vitae quasi dignissimos vero sed atque 
+                    deserunt delectus optio eaque dolores dolorum accusantium 
+                    expedita laborum harum quas, quaerat error perferendis assumenda 
+                    unde nulla consequuntur ad quod commodi. Iure, suscipit explicabo?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Modi recusandae, officia minima consectetur provident culpa sint 
+                    perspiciatis praesentium consequuntur, dolor sapiente optio voluptatibus 
+                    asperiores reprehenderit. Quos veniam eius autem! Ea!
+                </p> 
+            </div>
+        </section>
+
+        <section class="form">
+        <form action="#" id="newsletter">
+                <ul id="error"></ul>
+                <input type="text" placeholder="imię" id="txt"> 
+                 <ul id="error-name" class="error"></ul> 
+                <input type="email" placeholder="e-mail*" id="email">
+                 <ul id="error-email" class="error"></ul> 
+                <input type="tel" placeholder="nr telefonu" id="phone" onkeypress="return isNumber(event)" 
+                    ondrop="return false;" onpaste="return false;">
+                 <ul id="error-phone" class="error"></ul> 
+                <input list="city" placeholder="miasto" id="place">
+                <datalist id="city">
+                    <option value="Kraków"></option>
+                    <option value="Warszawa"></option>
+                    <option value="Poznań"></option>
+                    <option value="Gdańsk"></option>
+                </datalist>
+                
+                <ul class="tooltip-section">
+                    <li class="first">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, quibusdam.
+                        Lorem ipsum dolor sit amet.
+                        <span class="tooltip">[Rozwiń]
+                            <span class="tooltiptext">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                 Ratione, corporis!</span>
+                        </span>
+                    </li>
+                    <li class="seconds">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, laboriosam!
+                        Lorem ipsum dolor sit amet.
+                        <span class="tooltip">[Rozwiń]
+                            <span class="tooltiptext">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                 Rem, maiores ducimus excepturi architecto quaerat tenetur.</span>
+                        </span>
+                    </li>
+                </ul>
+                
+                <input type="submit" value="Wyślij">
+        </form>
+        </section>
+      
+    </div>
+
+
+
+   <script src="js/script.js"></script> 
+</body>
+</html>
