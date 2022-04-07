@@ -66,22 +66,22 @@
 
         <section class="form">
         <form action="#" id="newsletter">
-                <ul id="error"></ul>
-                <input type="text" placeholder="imię" id="txt"> 
-                 <ul id="error-name" class="error"></ul> 
-                <input type="email" placeholder="e-mail*" id="email">
-                 <ul id="error-email" class="error"></ul> 
+                <input type="text" placeholder="imię" id="txt" class="input-group"> 
+                 <ul id="error-name" class="red"></ul> 
+                <input type="email" placeholder="e-mail*" id="email" class="input-group">
+                 <ul id="error-email" class="red"></ul> 
                 <input type="tel" placeholder="nr telefonu" id="phone" onkeypress="return isNumber(event)" 
-                    ondrop="return false;" onpaste="return false;">
-                 <ul id="error-phone" class="error"></ul> 
-                <input list="city" placeholder="miasto" id="place">
-                <datalist id="city">
-                    <option value="Kraków"></option>
-                    <option value="Warszawa"></option>
-                    <option value="Poznań"></option>
-                    <option value="Gdańsk"></option>
-                </datalist>
-                
+                    ondrop="return false;" onpaste="return false;" class="input-group">
+                 <ul id="error-phone" class="red"></ul> 
+                <label for="city" placeholder="miasto">Wybierz miasto</label>
+                <select id="city" class="select-group">
+                    <option value=""></option>
+                    <option value="kraków">Kraków</option>
+                    <option value="warszawa">Warszawa</option>
+                    <option value="poznań">Poznań</option>
+                    <option value="gdańsk">Gdańsk</option>
+                </select>
+                <ul id="error-city" class="red"></ul> 
                 <ul class="tooltip-section">
                     <li class="first">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, quibusdam.
                         Lorem ipsum dolor sit amet.
