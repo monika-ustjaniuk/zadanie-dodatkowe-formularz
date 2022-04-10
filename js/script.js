@@ -1,91 +1,94 @@
 
- let newsletterForm = document.getElementById('newsletter');
 
-const validate = (event) => {
-    let name = document.getElementById('txt');
-    let email = document.getElementById('email');
-    let phone = document.getElementById('phone');
-    let city = document.getElementById('city');
-    let errors = document.getElementById('error-name');
-    let errorsEmail = document.getElementById('error-email');
-    let errorsPhone = document.getElementById('error-phone');
-    let errorsCity = document.getElementById('error-city')
-    
-         errors.innerHTML = '';
-   if (name.value.trim() === ''){
-       name.classList.add('error');
-        let errorLi = document.createElement('li');
-        errorLi.innerText = 'Wpisz imię';
-        errors.appendChild(errorLi);
-    } else {name.classList.remove('error');}
+const form = document.getElementById('form');
+const username = document.getElementById('name');
+const email = document.getElementById('email');
+const phone = document.getElementById('phone');
+const city = document.getElementById('city');
 
-        errorsEmail.innerHTML = '';
-    if (email.value.trim() === '' || /* !email.value.includes('@')  */ !email.value.match(/^[^@\s]+@([^@\s])+$/)){
-        email.classList.add('error');
-        let errorLi = document.createElement('li');
-        errorLi.innerText = 'example@gmail.com';
-        errorsEmail.appendChild(errorLi);
-    } else {email.classList.remove('error');}
 
-        errorsPhone.innerHTML ='';
-    if (phone.value.trim() === '' || phone.value.length < 6)  {
-        phone.classList.add('error');
-        let errorLi = document.createElement('li');
-        errorLi.innerText = 'Wpisz numer telefonu';
-        errorsPhone.appendChild(errorLi);
-    } else {phone.classList.remove('error');}
-
-        errorsCity.innerHTML='';
-    if (city.value === "") {
-         city.classList.add('error');
-        let errorLi = document.createElement('li'); 
-        errorLi.innerText = 'Wybierz miasto';
-        errorsCity.appendChild(errorLi);
-    } else {city.classList.remove('error');}
-     
-    if (isFormValid === false){
-        event.preventDefault();
-    } else {
-        newsletterForm.submit();
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    validateInputs();
+    if (isValid() === true){
+        form.submit();
     }
+    
+});
 
+const setError = (element, message) => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
+
+    errorDisplay.innerText = message;
+    inputControl.classList.add('error');
+    inputControl.classList.remove('success');
 }
 
+const setSuccess = element => {
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector('.error');
 
-function isNumber(e)
-{
-var keyCode = (e.which) ? e.which : e.keyCode;
+    errorDisplay.innerText = '';
+    inputControl.classList.add('success');
+    inputControl.classList.remove('error');
+}
+
+function isNumber (e){
+    var keyCode = (e.which) ? e.which : e.keyCode;
 
 if (keyCode > 31 && (keyCode < 48 || keyCode > 57))
 {
 return false;
 }
 return true;
-}  
-   
- function isFormValid(){
-    const inputContainer = newsletterForm.querySelectorAll('.input-group');
-    const selectGroup = newsletterForm.querySelector('.select-group');
-    let result = true;
-    inputContainer.forEach((container) => {
-        if (container.classList.contains('error')){
-            result = false
+}
+
+const validateInputs = () => {
+    const usernameValue = username.value.trim();
+    const emailValue = email.value.trim();
+    const phoneValue = phone.value.trim();
+    const cityValue = city.value.trim();
+
+ 
+
+    if(usernameValue === '') {
+        setError(username, 'Wpisz imię');
+    } else {
+        setSuccess(username);
+    }
+
+    if(emailValue ==='' || !email.value.match(/^[^@\s]+@([^@\s])+$/)){
+        setError(email, 'example@gmail.com');
+    } else {
+        setSuccess(email);
+    }
+
+    if(phoneValue ==='' || phone.value.length < 6){
+        setError(phone, 'Wpisz numer telefonu');
+    } else {
+        setSuccess(phone);
+    }
+
+    if(cityValue === ''){
+        setError(city, 'Wybierz miasto');
+    } else {
+        setSuccess(city);
+    }
+
+    
+}
+
+function isValid(){
+    const allInputs = document.querySelectorAll('.input-control');
+    let result = true
+    allInputs.forEach((container)=>{
+        if(container.classList.contains('error')){
+            result = false;
+        } else {
+            result = true;
         }
-    });
-    if (selectGroup.classList.contains('error')){
-        result = false;
-    }
-
+        
+    })
     return result;
- }
-
-  newsletterForm.addEventListener('submit',validate);
-
-
-/*  newsletterForm.addEventListener('submit', (event)=> {
-    event.preventDefault();
-    validate();
-    if (isFormValid() === true){
-        newsletterForm.submit();
-    }
- }); */
+}
