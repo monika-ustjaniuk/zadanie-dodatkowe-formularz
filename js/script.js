@@ -7,14 +7,30 @@ const phone = document.getElementById('phone');
 const city = document.getElementById('city');
 
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    validateInputs();
-    if (isValid() === true){
-        form.submit();
-    }
+form.addEventListener('submit', (event) => {
     
+    validateInputs();
+    if (isValid() == true){
+       form.submit();
+       console.log('wyslij');
+    } else { 
+        event.preventDefault();
+        console.log('uzupelnij');
+    }
 });
+
+
+function isValid(){
+    const allInputs = document.querySelectorAll('.input-control');
+    let result = true;
+    allInputs.forEach((container)=>{
+        if(container.classList.contains('error')){
+            result = false;
+        }
+    });
+    return result;
+}
+
 
 const setError = (element, message) => {
     const inputControl = element.parentElement;
@@ -77,18 +93,4 @@ const validateInputs = () => {
     }
 
     
-}
-
-function isValid(){
-    const allInputs = document.querySelectorAll('.input-control');
-    let result = true
-    allInputs.forEach((container)=>{
-        if(container.classList.contains('error')){
-            result = false;
-        } else {
-            result = true;
-        }
-        
-    })
-    return result;
 }
