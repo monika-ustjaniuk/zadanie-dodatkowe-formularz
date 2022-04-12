@@ -1,23 +1,8 @@
-
-
 const form = document.getElementById('form');
 const username = document.getElementById('name');
 const email = document.getElementById('email');
 const phone = document.getElementById('phone');
 const city = document.getElementById('city');
-
-
-form.addEventListener('submit', (event) => {
-    
-    validateInputs();
-    if (isValid() == true){
-       form.submit();
-       console.log('wyslij');
-    } else { 
-        event.preventDefault();
-        console.log('uzupelnij');
-    }
-});
 
 
 function isValid(){
@@ -31,6 +16,18 @@ function isValid(){
     return result;
 }
 
+
+form.addEventListener('submit', (event) => {
+    
+    validateInputs();
+    if (isValid() == true){
+       form.submit();
+       console.log('wyslij');
+      } else { 
+        event.preventDefault();
+        console.log('uzupelnij');
+    } 
+});
 
 const setError = (element, message) => {
     const inputControl = element.parentElement;
@@ -53,11 +50,11 @@ const setSuccess = element => {
 function isNumber (e){
     var keyCode = (e.which) ? e.which : e.keyCode;
 
-if (keyCode > 31 && (keyCode < 48 || keyCode > 57))
-{
-return false;
-}
-return true;
+    if (keyCode > 31 && (keyCode < 48 || keyCode > 57))
+    {
+        return false;
+    }
+        return true;
 }
 
 const validateInputs = () => {
@@ -91,6 +88,4 @@ const validateInputs = () => {
     } else {
         setSuccess(city);
     }
-
-    
 }
